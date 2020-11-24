@@ -111,8 +111,9 @@ app.post('/api/verifyMsg', function (req, res) {
 
   
 });
-
-app.listen(8000, function () {
+const port = process.env.PORT || 8000;
+// server.listen(port, () => console.log(`Listening on ${port}`));
+app.listen(port, function () {
     console.log('Example app listening on port 8000!')
 })
 function format(buf) {
