@@ -11,6 +11,9 @@ var request = require('request');
 const bodyParser = require('body-parser');
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({ extended: true })); // support encoded bodies
+app.get('/', function (req, res) {
+    res.send("你好棒");
+});
 app.get('/api/products', function (req, res) {
     const data = { "appId": "F74B63E1F64F7D161EE2CD666666F27F", "barcodes": ["1585980034279", "1910211514366-2"] }// let F = this.http.post(url,'');
     var signature = md5('1120749499853035880' + JSON.stringify(data));
